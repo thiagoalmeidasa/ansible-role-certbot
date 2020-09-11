@@ -23,4 +23,4 @@
 
   roles:
     - geerlingguy.git
-    - geerlingguy.certbot
+    - geerlingguy.certbot-route53

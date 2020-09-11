@@ -8,7 +8,7 @@ dependencies:
 allow_duplicates: true
 
 galaxy_info:
-  role_name: certbot
+  role_name: certbot-route53
   author: thiagoalmeidasa
   description: "Installs and configures Certbot (for Let's Encrypt)."
   company: "Midwestern Mac, LLC"

@@ -31,4 +31,4 @@
       when: ansible_os_family == 'Debian'
 
   roles:
-    - geerlingguy.certbot
+    - geerlingguy.certbot-route53
