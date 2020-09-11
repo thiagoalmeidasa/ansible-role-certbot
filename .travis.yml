@@ -1,6 +1,7 @@
 ---
 language: python
 services: docker
+dist: bionic
 
 env:
   global:
