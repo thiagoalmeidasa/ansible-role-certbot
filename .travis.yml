@@ -10,8 +10,8 @@ env:
     - MOLECULE_DISTRO: centos7
     - MOLECULE_DISTRO: centos6
       MOLECULE_PLAYBOOK: playbook-source-install.yml
+    - MOLECULE_DISTRO: ubuntu2004
     - MOLECULE_DISTRO: ubuntu1804
-    - MOLECULE_DISTRO: ubuntu1604
     - MOLECULE_DISTRO: debian10
 
 before_install:
