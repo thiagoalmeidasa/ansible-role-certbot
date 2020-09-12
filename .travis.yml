@@ -1,12 +1,13 @@
 ---
+os: linux
+dist: bionic
 language: python
 services: docker
-dist: bionic
 
 env:
   global:
     - ROLE_NAME: certbot-route53
-  matrix:
+  jobs:
     - MOLECULE_DISTRO: centos8
     - MOLECULE_DISTRO: centos7
     - MOLECULE_DISTRO: ubuntu2004
