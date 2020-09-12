@@ -29,11 +29,8 @@
       apt:
         name:
           - cron
-          - python-setuptools
-          - python3
-          - python3-apt
-          - python3-pip
           - python3-setuptools
+          - python-setuptools
         state: present
       when: ansible_os_family == 'Debian'
 

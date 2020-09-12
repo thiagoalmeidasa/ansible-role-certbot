@@ -1,4 +1,3 @@
 ---
-- src: geerlingguy.pip
 - src: geerlingguy.git
 - src: geerlingguy.nginx

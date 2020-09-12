@@ -1,10 +1,4 @@
 ---
-dependencies:
-  - role: geerlingguy.pip
-    vars:
-      pip_install_packages:
-        - name: awscli
-
 allow_duplicates: true
 
 galaxy_info:
