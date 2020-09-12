@@ -9,18 +9,32 @@
 
   pre_tasks:
     - name: Update apt cache.
-      apt: update_cache=yes cache_valid_time=600
+      apt:
+        name:
+          - python3-apt
+        update_cache: true
+        cache_valid_time: 600
       when: ansible_os_family == 'Debian'
       changed_when: false
 
     - name: Install cron (RedHat).
-      yum: name=cronie state=present
+      yum:
+        name: cronie
+        state: present
       when: ansible_os_family == 'RedHat'
 
-    - name: Install cron (Debian).
-      apt: name=cron state=present
+    - name: Install dependencies (Debian).
+      apt:
+        name:
+          - cron
+          - python-setuptools
+          - python3
+          - python3-apt
+          - python3-pip
+          - python3-setuptools
+        state: present
       when: ansible_os_family == 'Debian'
 
   roles:
     - geerlingguy.git
-    - geerlingguy.certbot-route53
+    - thiagoalmeidasa.certbot-route53

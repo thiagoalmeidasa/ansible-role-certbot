@@ -7,12 +7,6 @@
     update: "{{ certbot_keep_updated }}"
     force: true
 
-- name: Install Certbot route53 plugin.
-  package:
-    name:
-      - python3-certbot-dns-route53
-    state: present
-
 - name: Set Certbot script variable.
   set_fact:
     certbot_script: "{{ certbot_dir }}/certbot-auto"
@@ -21,3 +15,8 @@
   file:
     path: "{{ certbot_script }}"
     mode: 0755
+
+- name: Install Certbot route53 plugin.
+  package:
+    name: "{{ certbot_route53_package }}"
+    state: present

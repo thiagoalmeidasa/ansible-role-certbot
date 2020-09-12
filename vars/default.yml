@@ -1,2 +1,3 @@
 ---
 certbot_package: certbot
+certbot_route53_package: python3-certbot-dns-route53

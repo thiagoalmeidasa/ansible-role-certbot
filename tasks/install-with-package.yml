@@ -6,8 +6,7 @@
 
 - name: Install Certbot route53 plugin.
   package:
-    name:
-      - python3-certbot-dns-route53
+    name: "{{ certbot_route53_package }}"
     state: present
 
 - name: Set Certbot script variable.

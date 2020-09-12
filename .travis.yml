@@ -9,8 +9,6 @@ env:
   matrix:
     - MOLECULE_DISTRO: centos8
     - MOLECULE_DISTRO: centos7
-    - MOLECULE_DISTRO: centos6
-      MOLECULE_PLAYBOOK: playbook-source-install.yml
     - MOLECULE_DISTRO: ubuntu2004
     - MOLECULE_DISTRO: ubuntu1804
     - MOLECULE_DISTRO: debian10
@@ -26,8 +24,8 @@ install:
 before_script:
   # Use actual Ansible Galaxy role name for the project directory.
   - cd ../
-  - mv ansible-role-$ROLE_NAME geerlingguy.$ROLE_NAME
-  - cd geerlingguy.$ROLE_NAME
+  - mv ansible-role-$ROLE_NAME thiagoalmeidasa.$ROLE_NAME
+  - cd thiagoalmeidasa.$ROLE_NAME
 
 script:
   # Run tests.

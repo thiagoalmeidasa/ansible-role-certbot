@@ -1,12 +1,12 @@
 # Ansible Role: Certbot (for Let's Encrypt)
 
-[![Build Status](https://travis-ci.org/geerlingguy/ansible-role-certbot.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-certbot)
+[![Build Status](https://travis-ci.org/thiagoalmeidasa/ansible-role-certbot.svg?branch=master)](https://travis-ci.org/thiagoalmeidasa/ansible-role-certbot)
 
 Installs and configures Certbot (for Let's Encrypt).
 
 ## Requirements
 
-If installing from source, Git is required. You can install Git using the `geerlingguy.git` role.
+If installing from source, Git is required. You can install Git using the `thiagoalmeidasa.git` role.
 
 Generally, installing from source (see section `Source Installation from Git`) leads to a better experience using Certbot and Let's Encrypt, especially if you're using an older OS release.
 
@@ -29,9 +29,9 @@ Currently there is one built-in method for generating new certificates using thi
 **For a complete example**: see the fully functional test playbook in [molecule/default/playbook-standalone-nginx-aws.yml](molecule/default/playbook-standalone-nginx-aws.yml).
 
     certbot_create_if_missing: false
-    certbot_create_method: standalone
+    certbot_create_method: certonly
 
-Set `certbot_create_if_missing` to `yes` or `True` to let this role generate certs. Set the method used for generating certs with the `certbot_create_method` variable—current allowed values include: `standalone`.
+Set `certbot_create_if_missing` to `yes` or `True` to let this role generate certs. Set the method used for generating certs with the `certbot_create_method` variable—current allowed values include: `certonly`.
 
     certbot_admin_email: email@example.com
 
@@ -77,7 +77,7 @@ The directory inside which Certbot will be cloned.
 
 ### Wildcard Certificates
 
-Let's Encrypt supports [generating wildcard certificates](https://community.letsencrypt.org/t/acme-v2-and-wildcard-certificate-support-is-live/55579), but the process for generating and using them is slightly more involved. See comments in [this pull request](https://github.com/geerlingguy/ansible-role-certbot/pull/60#issuecomment-423919284) for an example of how to use this role to maintain wildcard certs.
+Let's Encrypt supports [generating wildcard certificates](https://community.letsencrypt.org/t/acme-v2-and-wildcard-certificate-support-is-live/55579), but the process for generating and using them is slightly more involved. See comments in [this pull request](https://github.com/thiagoalmeidasa/ansible-role-certbot/pull/60#issuecomment-423919284) for an example of how to use this role to maintain wildcard certs.
 
 Michael Porter also has a walkthrough of [Creating A Let’s Encrypt Wildcard Cert With Ansible](https://www.michaelpporter.com/2018/09/creating-a-wildcard-cert-with-ansible/), specifically with Cloudflare.
 
@@ -88,14 +88,14 @@ None.
 ## Example Playbook
 
     - hosts: servers
-    
+
       vars:
         certbot_auto_renew_user: your_username_here
         certbot_auto_renew_minute: "20"
         certbot_auto_renew_hour: "5"
-    
+
       roles:
-        - geerlingguy.certbot
+        - thiagoalmeidasa.certbot
 
 See other examples in the `tests/` directory.
 

@@ -10,7 +10,7 @@ certbot_auto_renew_options: >-
 
 # Parameters used when creating new Certbot certs.
 certbot_create_if_missing: false
-certbot_create_method: standalone
+certbot_create_method: certonly
 certbot_admin_email: email@example.com
 certbot_certs: []
 # - email: janedoe@example.com
