@@ -6,7 +6,7 @@ Installs and configures Certbot (for Let's Encrypt).
 
 ## Requirements
 
-If installing from source, Git is required. You can install Git using the `thiagoalmeidasa.git` role.
+If installing from source, Git is required. You can install Git using the `geerlingguy.git` role.
 
 Generally, installing from source (see section `Source Installation from Git`) leads to a better experience using Certbot and Let's Encrypt, especially if you're using an older OS release.
 
@@ -15,7 +15,7 @@ Generally, installing from source (see section `Source Installation from Git`) l
 The variable `certbot_install_from_source` controls whether to install Certbot from Git or package management. The latter is the default, so the variable defaults to `no`.
 
     certbot_auto_renew: true
-    certbot_auto_renew_user: "{{ ansible_user | default(lookup('env', 'USER')) }}"
+    certbot_auto_renew_user: root
     certbot_auto_renew_hour: "3"
     certbot_auto_renew_minute: "30"
     certbot_auto_renew_options: "--quiet --no-self-upgrade"
@@ -86,7 +86,7 @@ None.
         certbot_auto_renew_hour: "5"
 
       roles:
-        - thiagoalmeidasa.certbot
+        - thiagoalmeidasa.certbot_route53
 
 See other examples in the `tests/` directory.
 
@@ -125,7 +125,3 @@ See full documentation and options on the [Certbot website](https://certbot.eff.
 ## License
 
 MIT / BSD
-
-## Author Information
-
-This role was created in 2016 by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/).
